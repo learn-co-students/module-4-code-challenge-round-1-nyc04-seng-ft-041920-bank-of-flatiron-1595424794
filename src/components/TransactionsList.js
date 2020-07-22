@@ -1,7 +1,34 @@
 import React from "react";
 import Transaction from "./Transaction";
 
-const TransactionsList = () => {
+class TransactionsList extends React.Component {
+
+  state = {
+    transaction: []
+  }
+
+  componentDidMount() {
+    fetch("http://localhost:6001/transactions")
+      .then(r => r.json())
+      .then(transaction => {
+        this.setState({transaction})
+      })
+  }
+
+  renderTransaction() {
+    return this.state.transaction.map(transaction => 
+    <Transaction 
+    key={transaction.id}
+    date={transaction.date}
+    description={transaction.description}
+    category={transaction.category}
+    amount={transaction.amount} 
+    />
+    )
+  }
+
+  render () {
+    console.log(this.state)
   return (
     <table className="ui celled striped padded table">
       <tbody>
@@ -19,10 +46,11 @@ const TransactionsList = () => {
             <h3 className="ui center aligned header">Amount</h3>
           </th>
         </tr>
-        {/* render Transactions here */}
+        {this.renderTransaction()}
       </tbody>
     </table>
   );
+  }
 };
 
 export default TransactionsList;

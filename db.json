@@ -90,6 +90,13 @@
       "category": "",
       "amount": 0,
       "id": 13
+    },
+    {
+      "date": "2020-07-31",
+      "description": "asd",
+      "category": "asdas",
+      "amount": "23",
+      "id": 14
     }
   ]
 }

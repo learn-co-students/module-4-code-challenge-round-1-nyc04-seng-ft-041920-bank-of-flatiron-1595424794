@@ -83,6 +83,238 @@
       "description": "Venmo, Pay Roommate for Rent",
       "category": "Housing",
       "amount": -975
+    },
+    {
+      "submit": "0.21",
+      "id": 13
+    },
+    {
+      "submit": "0.21",
+      "id": 14
+    },
+    {
+      "submit": "0.21",
+      "id": 15
+    },
+    {
+      "submit": "0.21",
+      "id": 16
+    },
+    {
+      "submit": "0.21",
+      "id": 17
+    },
+    {
+      "submit": "0.21",
+      "id": 18
+    },
+    {
+      "submit": "0.21",
+      "id": 19
+    },
+    {
+      "submit": "0.21",
+      "id": 20
+    },
+    {
+      "submit": "0.21",
+      "id": 21
+    },
+    {
+      "submit": "0.21",
+      "id": 22
+    },
+    {
+      "submit": "amer",
+      "id": 23
+    },
+    {
+      "submit": "",
+      "id": 24
+    },
+    {
+      "submit": "",
+      "id": 25
+    },
+    {
+      "submit": "",
+      "id": 26
+    },
+    {
+      "submit": "",
+      "id": 27
+    },
+    {
+      "id": 28
+    },
+    {
+      "id": 29
+    },
+    {
+      "id": 30
+    },
+    {
+      "id": 31
+    },
+    {
+      "id": 32
+    },
+    {
+      "id": 33
+    },
+    {
+      "date": "2020-07-01",
+      "description": "amer",
+      "category": "qq",
+      "amount": "0.03",
+      "id": 34
+    },
+    {
+      "date": "2020-07-01",
+      "description": "amer",
+      "category": "qq",
+      "amount": "0.03",
+      "id": 35
+    },
+    {
+      "date": "2020-07-01",
+      "description": "amer",
+      "category": "qq",
+      "amount": "0.03",
+      "id": 36
+    },
+    {
+      "date": "2020-07-01",
+      "description": "amer",
+      "category": "qq",
+      "amount": "0.03",
+      "id": 37
+    },
+    {
+      "date": "2020-07-01",
+      "description": "amer",
+      "category": "qq",
+      "amount": "0.03",
+      "id": 38
+    },
+    {
+      "date": "2020-07-01",
+      "description": "amer",
+      "category": "qq",
+      "amount": "0.03",
+      "id": 39
+    },
+    {
+      "date": "2020-07-01",
+      "description": "amer",
+      "category": "qq",
+      "amount": "0.03",
+      "id": 40
+    },
+    {
+      "date": "2020-07-01",
+      "description": "amer",
+      "category": "qq",
+      "amount": "0.03",
+      "id": 41
+    },
+    {
+      "date": "2020-07-01",
+      "description": "amer",
+      "category": "qq",
+      "amount": "0.03",
+      "id": 42
+    },
+    {
+      "date": "2020-07-01",
+      "description": "amer",
+      "category": "qq",
+      "amount": "0.03",
+      "id": 43
+    },
+    {
+      "date": "2020-07-01",
+      "description": "amer",
+      "category": "qq",
+      "amount": "0.03",
+      "id": 44
+    },
+    {
+      "date": "2020-07-01",
+      "description": "amer",
+      "category": "qq",
+      "amount": "0.03",
+      "id": 45
+    },
+    {
+      "date": "2020-07-01",
+      "description": "amer",
+      "category": "qq",
+      "amount": "0.03",
+      "id": 46
+    },
+    {
+      "date": "2020-07-01",
+      "description": "amer",
+      "category": "qq",
+      "amount": "0.03",
+      "id": 47
+    },
+    {
+      "date": "2020-07-01",
+      "description": "amer",
+      "category": "qq",
+      "amount": "0.03",
+      "id": 48
+    },
+    {
+      "date": "2020-07-01",
+      "description": "amer",
+      "category": "qq",
+      "amount": "0.03",
+      "id": 49
+    },
+    {
+      "date": "2020-07-01",
+      "description": "amer",
+      "category": "qq",
+      "amount": "0.03",
+      "id": 50
+    },
+    {
+      "date": "2020-07-01",
+      "description": "amer",
+      "category": "qq",
+      "amount": "0.03",
+      "id": 51
+    },
+    {
+      "date": "2020-07-01",
+      "description": "amer",
+      "category": "qq",
+      "amount": "0.03",
+      "id": 52
+    },
+    {
+      "date": "2020-07-02",
+      "description": "amer",
+      "category": "qq",
+      "amount": "",
+      "id": 53
+    },
+    {
+      "date": "2020-07-02",
+      "description": "amer",
+      "category": "qq",
+      "amount": "",
+      "id": 54
+    },
+    {
+      "date": "2020-07-01",
+      "description": "Hi, im goku",
+      "category": "",
+      "amount": "",
+      "id": 55
     }
   ]
 }

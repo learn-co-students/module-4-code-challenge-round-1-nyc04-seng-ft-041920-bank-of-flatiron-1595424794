@@ -9,7 +9,7 @@ import AddTransactionForm from "./AddTransactionForm";
 // - Filter transactions by typing into the search bar. Only transactions with a description matching the search term should be shown in the transactions table.
 
 class AccountContainer extends Component {
-  state = { transactions: [] };
+  state = { transactions: [], filtered: [] };
 
   componentDidMount() {
     fetch("http://localhost:6001/transactions")
@@ -21,7 +21,7 @@ class AccountContainer extends Component {
 
   onFormSubmit = (newItem) => {
     this.setState({
-      transactions: [newItem, ...this.state.transactions],
+      filtered: [newItem, ...this.state.transactions],
     });
   };
 
@@ -29,7 +29,7 @@ class AccountContainer extends Component {
     const filteredList = this.state.transactions.filter((trans) =>
       trans.description.includes(term)
     );
-    this.setState({ transactions: filteredList });
+    this.setState({ filtered: filteredList });
   };
   render() {
     console.log(this.state.transactions);
@@ -40,7 +40,10 @@ class AccountContainer extends Component {
           onSearch={this.onSearch}
         />
         <AddTransactionForm handleAdd={this.onFormSubmit} />
-        <TransactionsList transactions={this.state.transactions} />
+        <TransactionsList
+          transactions={this.state.transactions}
+          filtered={this.state.filtered}
+        />
       </div>
     );
   }

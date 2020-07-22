@@ -12,7 +12,7 @@ const Transaction = ({filteredTrx, index}) => {
           <td>{filteredTrx[index].description}</td>
           <td>{filteredTrx[index].category}</td>
           <td>{filteredTrx[index].amount}</td>
-          <td><button onClick={actions.deleteTrx}>Hide from Mom</button></td>
+          <td><button onClick={() => actions.deleteTrx(filteredTrx[index].id)}>Hide from Mom</button></td>
         </tr>
       }
     </Consumer>

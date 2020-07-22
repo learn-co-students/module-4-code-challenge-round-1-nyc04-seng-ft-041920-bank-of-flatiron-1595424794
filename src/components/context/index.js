@@ -5,7 +5,6 @@ export const Consumer = BankContext.Consumer
 
 export class Provider extends Component {
  state = {
-   // will this change if its all a big object?
    transactions: [],
    searchTerm: ""
  }
@@ -51,8 +50,11 @@ export class Provider extends Component {
   this.setState({searchTerm: val})
  }
 
- handleDelete = () => {
-  console.log('hide the bills from mom!')
+ handleDelete = (id) => {
+  fetch(`http://localhost:6001/transactions/${id}`, {
+    method: "DELETE",
+  })
+  // doesn't reload but deletes
  }
 
  render() {

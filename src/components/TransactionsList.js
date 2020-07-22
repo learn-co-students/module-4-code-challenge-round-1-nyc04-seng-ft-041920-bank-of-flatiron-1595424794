@@ -25,7 +25,7 @@ const TransactionsList = () => {
         </tr>
         <Consumer>
           {({transactions, search}) => {
-            const filteredTrx = transactions.filter(trx => trx.description.includes(search))
+            const filteredTrx = transactions.filter(trx => trx.description.toLowerCase().includes(search.toLowerCase()))
             console.log(filteredTrx)
             return (
               <React.Fragment>

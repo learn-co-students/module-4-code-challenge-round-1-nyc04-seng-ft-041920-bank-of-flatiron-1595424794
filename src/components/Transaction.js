@@ -3,12 +3,15 @@ import { render } from "react-dom";
 
 class Transaction extends React.Component {
   render() {
+
+    const {date, description, category, amount} = this.props
+
   return (
     <tr>
-      <td>{this.props.date}</td>
-      <td>{this.props.description}</td>
-      <td>{this.props.category}</td>
-      <td>{this.props.amount}</td>
+      <td>{date}</td>
+      <td>{description}</td>
+      <td>{category}</td>
+      <td>{amount}</td>
     </tr>
   );
   }

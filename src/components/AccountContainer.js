@@ -59,7 +59,7 @@ class AccountContainer extends Component {
         })
     }
 
-    
+
     render() {
 
     return (
@@ -73,7 +73,10 @@ class AccountContainer extends Component {
           handleFormInput={this.handleFormInput}
           handleSubmit={this.handleSubmit}
         />
-        <TransactionsList transactions={this.state.transactions} searchTerm={this.state.searchTerm} />
+        <TransactionsList 
+          transactions={this.state.transactions} 
+          searchTerm={this.state.searchTerm}
+         />
       </div>
     );
   }

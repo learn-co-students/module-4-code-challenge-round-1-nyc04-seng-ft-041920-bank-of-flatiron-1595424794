@@ -4,7 +4,7 @@ import Transaction from "./Transaction";
 const TransactionsList = (props) => {
 
   let renderTransactions = () => {
-    return props.transactions.map(trans => <Transaction key={trans.id} transaction={trans} />)
+    return props.transactions.map(trans => <Transaction key={trans.id} transaction={trans} deleteHandler={props.deleteHandler}/>)
   }
   return (
     <table className="ui celled striped padded table">

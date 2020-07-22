@@ -2,12 +2,14 @@ import React, { Component } from "react";
 import TransactionsList from "./TransactionsList";
 import Search from "./Search";
 import AddTransactionForm from "./AddTransactionForm";
+import Sort from './Sort'
 
 class AccountContainer extends Component {
   
   state = {
     transactions: [],
-    searchTerm: ''
+    searchTerm: '',
+    sort: ''
   }
 
   componentDidMount(){
@@ -34,13 +36,32 @@ class AccountContainer extends Component {
     })
   }
 
+  setSort = (val) => {
+    this.setState({
+      sort: val
+    })
+  }
+
+  deleteHandler = (id) => {
+    let updatedList = this.state.transactions.filter(trans => trans.id != id)
+    this.setState({
+      transactions: updatedList
+    })
+  }
+
   render() {
     let filterTransactions = this.state.transactions.filter(trans => trans.description.includes(this.state.searchTerm))
+    // for case sensitive: trans.description.toLowerCase().includes(this.state.searchTerm.toLowerCase())
+    let sortedItems = filterTransactions;
+    if(this.state.sort){
+      filterTransactions.sort((a,b) => a[this.state.sort].localeCompare(b[this.state.sort]))
+    }
     return (
       <div>
         <Search setSearchTerm={this.setSearchTerm}/>
         <AddTransactionForm handleSaveData={this.handleSaveData}/>
-        <TransactionsList transactions={filterTransactions}/>
+        <Sort setSort={this.setSort} selected={this.state.sort}/>
+        <TransactionsList transactions={sortedItems} deleteHandler={this.deleteHandler}/>
       </div>
     );
   }

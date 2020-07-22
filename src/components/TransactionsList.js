@@ -1,5 +1,10 @@
 import React from "react";
 import Transaction from "./Transaction";
+import AccountContainer from "./AccountContainer";
+
+class TransactionArr extends React.Component {
+
+}
 
 const TransactionsList = () => {
   return (
@@ -19,7 +24,7 @@ const TransactionsList = () => {
             <h3 className="ui center aligned header">Amount</h3>
           </th>
         </tr>
-        {/* render Transactions here */}
+        {this.props.trans}
       </tbody>
     </table>
   );

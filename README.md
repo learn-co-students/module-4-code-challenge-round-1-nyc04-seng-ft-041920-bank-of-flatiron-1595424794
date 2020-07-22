@@ -33,9 +33,9 @@ These are the endpoints you might need:
 
 As a user, I should be able to:
 
-- See a table of the transactions.
-- Fill out and submit the form to add a new transaction. This should add a the new transaction to the table **as well as post the new transaction to the backend API for persistence**.
-- Filter transactions by typing into the search bar. Only transactions with a description matching the search term should be shown in the transactions table.
+- [x] See a table of the transactions.
+- [x] Fill out and submit the form to add a new transaction. This should add a the new transaction to the table **as well as post the new transaction to the backend API for persistence**.
+- [x] Filter transactions by typing into the search bar. Only transactions with a description matching the search term should be shown in the transactions table.
 
 ## Advanced Deliverables
 
@@ -51,3 +51,10 @@ As a user, I should be able to:
 ## Rubric
 
 You can find the rubric for this assessment [here](https://github.com/learn-co-curriculum/se-rubrics/blob/master/module-4.md).
+
+              app
+               |
+        AccountContainer(maybe state here?)
+  Search     AddTransactionForm    TransactionsList
+  (filter)    (form)                       |
+                                     Transaction(render)

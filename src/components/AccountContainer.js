@@ -32,31 +32,26 @@ class AccountContainer extends Component {
       }))
   }
 
-  handleSearch = (e) => {
-    const searchTerm = e.target.value
+  handleSearch = (term) => {
     this.setState({
-      search: searchTerm
+      search: term
     })
   }
 
-  filteredTransactions = () => {
-    // const transactions = this.state.transactions
-    // const searchTerm = this.state.search
-    let filteredTransactions = [...this.state.transactions]
-    console.log(filteredTransactions)
-    // filteredTransactions.filter(transaction => {
-    //   if (transaction.description.includes(this.state.search)) {
-    //     return true
-    //   } 
-    // })
+  filterTransactions = (term) => {
+    let filteredTransactions = this.state.transactions
+    filteredTransactions = filteredTransactions.filter(transaction => transaction.description.includes(term))
+    return filteredTransactions
   }
 
   render() {
+    console.log(this.state.search)
+    console.log(this.filterTransactions(this.state.search))
     return (
       <div>
         <Search handleSearch={this.handleSearch}/>
         <AddTransactionForm handleChange={this.handleChange} addTransaction={this.addTransaction}/>
-        <TransactionsList transactions={this.state.transactions}/>
+        <TransactionsList transactions={this.filterTransactions(this.state.search)}/>
       </div>
     );
   }

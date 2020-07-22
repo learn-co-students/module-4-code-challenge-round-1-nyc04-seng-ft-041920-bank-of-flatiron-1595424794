@@ -8,6 +8,7 @@ class AccountContainer extends Component {
     transactions: []
   }
 
+  // Fetch list of current Transactions
   componentDidMount(){
     fetch(`http://localhost:6001/transactions`)
      .then(resp => resp.json())
@@ -19,11 +20,19 @@ class AccountContainer extends Component {
   }
 
 
+  // Create a New Transaction
+  addNewTransaction = newTrans => {
+    this.setState(prevState => ({
+      transactions: [...prevState.transactions, newTrans]
+    }))
+  }
+
+
   render() {
     return (
       <div>
         <Search />
-        <AddTransactionForm />
+        <AddTransactionForm handleNewTransaction={this.addNewTransaction} />
         <TransactionsList transactions={this.state.transactions}/>
       </div>
     );

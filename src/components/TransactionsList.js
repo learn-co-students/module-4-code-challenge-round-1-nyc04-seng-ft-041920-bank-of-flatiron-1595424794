@@ -2,7 +2,11 @@ import React from "react";
 import Transaction from "./Transaction";
 import AccountContainer from "./AccountContainer";
 
-class TransactionArr extends React.Component {
+class TransArr extends React.Component {
+
+  state = {
+    transArr: []
+  }
 
 }
 
@@ -24,7 +28,10 @@ const TransactionsList = () => {
             <h3 className="ui center aligned header">Amount</h3>
           </th>
         </tr>
-        {this.props.trans}
+        {this.state.data.map(item => (
+                   <ListItem rowData={item} handleClick={this.getData}/>
+              ))}
+        {this.props.transArr}
       </tbody>
     </table>
   );

@@ -11,7 +11,7 @@ class AccountContainer extends Component {
       transactions: [],
       searchInput: ""
     }
-    this.handleSearch = this.handleSearch.bind(this)
+    //this.handleSearch = this.handleSearch.bind(this)
   }
   
 
@@ -23,18 +23,18 @@ class AccountContainer extends Component {
     }))
   }
 
-  handleSearch(event) {
+  /* handleSearch(event) {
     this.setState({
-      search: event.target.value
+      searchInput: event.target.value
     })
-  }
+  } */
 
   
   render() {
     console.log(this.state.transactions)
     return (
       <div>
-        <Search handleSearch={this.handeSearch}/>
+        <Search /*{handleSearch={this.handleSearch}*//>
         <AddTransactionForm />
         <TransactionsList data={this.state.transactions} />
       </div>

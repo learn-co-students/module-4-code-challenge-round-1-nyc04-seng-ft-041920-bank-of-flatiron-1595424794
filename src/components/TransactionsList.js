@@ -1,7 +1,40 @@
 import React from "react";
 import Transaction from "./Transaction";
 
-const TransactionsList = () => {
+const TransactionsList = (props) => {
+  
+  const renderTransaction = () => {
+    function compare(a, b) {
+
+      const categoryA = a.category.toUpperCase();
+      const categoryB = b.category.toUpperCase();
+    
+      let comparison = 0;
+      if (categoryA > categoryB) {
+        comparison = 1;
+      } else if (categoryA < categoryB) {
+        comparison = -1;
+      }
+      return comparison;
+    }
+    
+
+    
+    const filteredTransactions = props.transactions.filter( transaction => transaction.description.toLowerCase().includes(props.searchTerm) )
+    
+    filteredTransactions.sort(compare);
+
+    return filteredTransactions.map(transaction => {
+      return <Transaction 
+        key={transaction.id} 
+        date={transaction.date} 
+        description={transaction.description}
+        category= {transaction.category}
+        amount={transaction.amount}
+        />
+  })
+  }
+
   return (
     <table className="ui celled striped padded table">
       <tbody>
@@ -19,7 +52,7 @@ const TransactionsList = () => {
             <h3 className="ui center aligned header">Amount</h3>
           </th>
         </tr>
-        {/* render Transactions here */}
+        {renderTransaction()}
       </tbody>
     </table>
   );

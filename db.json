@@ -41,6 +41,20 @@
       "date": "2020-07-29",
       "description": "groceries ",
       "id": 17
+    },
+    {
+      "amount": 0.01,
+      "category": "code",
+      "date": "",
+      "description": "add array",
+      "id": 18
+    },
+    {
+      "amount": 0.01,
+      "category": "a",
+      "date": "2020-07-23",
+      "description": "zodiac",
+      "id": 19
     }
   ]
 }

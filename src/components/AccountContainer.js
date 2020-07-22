@@ -32,6 +32,10 @@ class AccountContainer extends Component {
     const newList = this.state.transactions.filter((trans) => trans.id !== id);
     this.setState({ transactions: newList });
   };
+
+  sortList = (newList) => {
+    this.setState({ transactions: newList });
+  };
   render() {
     console.log(this.state.transactions);
     return (
@@ -45,6 +49,7 @@ class AccountContainer extends Component {
           transactions={this.state.transactions}
           filtered={this.state.filtered}
           onDelete={this.onDelete}
+          sortList={this.sortList}
         />
       </div>
     );

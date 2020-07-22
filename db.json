@@ -1,13 +1,6 @@
 {
   "transactions": [
     {
-      "id": 1,
-      "date": "2019-12-01",
-      "description": "Paycheck from Bob's Burgers",
-      "category": "Income",
-      "amount": 1000
-    },
-    {
       "id": 2,
       "date": "2019-12-01",
       "description": "South by Southwest Quinoa Bowl at Fresh & Co",
@@ -90,20 +83,6 @@
       "category": "Food",
       "amount": "15.00",
       "id": 13
-    },
-    {
-      "date": "2020-07-22",
-      "description": "Nintendo Switch Online",
-      "category": "Gaming",
-      "amount": "20.00",
-      "id": 14
-    },
-    {
-      "date": "2020-07-22",
-      "description": "Gift",
-      "category": "Misc",
-      "amount": "20.00",
-      "id": 15
     }
   ]
 }

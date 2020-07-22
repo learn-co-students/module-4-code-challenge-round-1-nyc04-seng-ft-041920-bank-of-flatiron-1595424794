@@ -4,7 +4,25 @@ import Transaction from "./Transaction";
 const TransactionsList = (props) => {
   
   const renderTransaction = () => {
-    const filteredTransactions = props.transactions.filter(transaction => transaction.description.toLowerCase().includes(props.searchTerm))
+    function compare(a, b) {
+
+      const categoryA = a.category.toUpperCase();
+      const categoryB = b.category.toUpperCase();
+    
+      let comparison = 0;
+      if (categoryA > categoryB) {
+        comparison = 1;
+      } else if (categoryA < categoryB) {
+        comparison = -1;
+      }
+      return comparison;
+    }
+    
+
+    
+    const filteredTransactions = props.transactions.filter( transaction => transaction.description.toLowerCase().includes(props.searchTerm) )
+    
+    filteredTransactions.sort(compare);
 
     return filteredTransactions.map(transaction => {
       return <Transaction 

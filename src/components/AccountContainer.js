@@ -21,7 +21,6 @@ class AccountContainer extends Component {
   
   getTransactions() {
     return this.state.transactions.filter(transactions => transactions.completed)
-    const completedTransactions = this.getTransactions()
   }
   
   
@@ -29,11 +28,12 @@ class AccountContainer extends Component {
   
   
   render() {
+    const completedTransactions = this.getTransactions()
     return (
       <div>
         <Search />
         <AddTransactionForm />
-        <TransactionsList />
+        <TransactionsList transactions={completedTransactions}/>
       </div>
     );
   }

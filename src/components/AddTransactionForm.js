@@ -7,7 +7,7 @@ handleSubmit = event => {
   event.preventDefault();
   
   this.props.handleAddTransaction({
-    git commit 
+/** */
   })
   
 }

@@ -19,7 +19,7 @@ const TransactionsList = () => {
             <h3 className="ui center aligned header">Amount</h3>
           </th>
         </tr>
-       {/* /* const renderTransactions = () => return props.transactions.map{ transactions*/ /** this is where we would usually post but where do i post or what do i want to access here */} 
+{/* const renderTransactions = () = props.transactions.map{ transaction =>  } /** this is where we would usually post but where do i post or what do i want to access here */}
       </tbody>
     </table>
   );

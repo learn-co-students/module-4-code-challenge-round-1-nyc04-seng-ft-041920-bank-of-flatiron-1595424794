@@ -40,7 +40,7 @@ class AccountContainer extends Component {
 
   filterTransactions = (term) => {
     let filteredTransactions = this.state.transactions
-    filteredTransactions = filteredTransactions.filter(transaction => transaction.description.includes(term))
+    filteredTransactions = filteredTransactions.filter(transaction => transaction.description.toLowerCase().includes(term))
     return filteredTransactions
   }
 

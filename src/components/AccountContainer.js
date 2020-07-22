@@ -22,6 +22,12 @@ class AccountContainer extends Component {
     }))
   }
 
+  deleteTransaction = (id) => {
+    this.setState(prevState => ({
+      transactions: prevState.transactions.filter(t => t.id !== id)
+    }))
+  }
+
   filterTransactions = (searchTerm) => {
     this.setState({ searchTerm })
   }
@@ -38,7 +44,7 @@ class AccountContainer extends Component {
       <div>
         <Search handleSearch={this.filterTransactions}/>
         <AddTransactionForm addTransaction={this.addTransaction}/>
-        <TransactionsList transactions={this.filteredTransactions()}/>
+        <TransactionsList transactions={this.filteredTransactions()} handleDelete={this.deleteTransaction}/>
       </div>
     );
   }

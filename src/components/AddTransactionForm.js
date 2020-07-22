@@ -17,7 +17,6 @@ class AddTransactionForm extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault()
-    console.log(this.state)
     // do a POST
     fetch("http://localhost:6001/transactions", {
       method: "POST",

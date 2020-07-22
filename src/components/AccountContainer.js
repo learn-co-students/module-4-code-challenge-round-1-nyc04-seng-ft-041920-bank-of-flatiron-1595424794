@@ -31,6 +31,22 @@ class AccountContainer extends Component {
     });
   };
 
+  removeTransaction = (removedTransaction) => {
+    const updatedTransactions = this.state.transactions.filter(
+      (transaction) => {
+        if (transaction.id !== removedTransaction.id) {
+          return true;
+        } else {
+          return false;
+        }
+      }
+    );
+
+    this.setState({
+      transactions: updatedTransactions,
+    });
+  };
+
   render() {
     return (
       <div>
@@ -42,6 +58,7 @@ class AccountContainer extends Component {
         <TransactionsList
           transactions={this.state.transactions}
           searchTerm={this.state.searchTerm}
+          removeTransaction={this.removeTransaction}
         />
       </div>
     );

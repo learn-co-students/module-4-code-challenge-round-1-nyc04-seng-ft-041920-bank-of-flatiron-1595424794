@@ -11,7 +11,11 @@ const TransactionsList = (props) => {
 
   const renderTransactions = () => {
     return renderFilteredTransactions().map((transaction) => (
-      <Transaction key={transaction.id} transaction={transaction} />
+      <Transaction
+        key={transaction.id}
+        transaction={transaction}
+        removeTransaction={props.removeTransaction}
+      />
     ));
   };
 

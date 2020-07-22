@@ -85,25 +85,11 @@
       "amount": -975
     },
     {
-      "date": "2020-07-02",
+      "date": "2020-07-31",
       "description": "bought something to eat",
       "category": "Food",
-      "amount": "5",
+      "amount": "-10",
       "id": 13
-    },
-    {
-      "date": "2020-07-20",
-      "description": "bought more food",
-      "category": "Food",
-      "amount": "8.50",
-      "id": 14
-    },
-    {
-      "date": "2020-07-28",
-      "description": "bought dinner",
-      "category": "Food",
-      "amount": "20",
-      "id": 15
     }
   ]
 }

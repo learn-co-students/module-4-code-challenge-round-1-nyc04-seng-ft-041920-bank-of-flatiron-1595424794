@@ -50,7 +50,6 @@ class AccountContainer extends Component {
   }
 
   render() {
-    console.log(this.state.sortBy)
     return (
       <div>
         <div>

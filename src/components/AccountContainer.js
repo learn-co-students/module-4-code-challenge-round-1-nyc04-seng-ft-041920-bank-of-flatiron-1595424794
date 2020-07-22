@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import TransactionsList from "./TransactionsList";
 import Search from "./Search";
 import AddTransactionForm from "./AddTransactionForm";
+import Sort from "./Sort"
 
 class AccountContainer extends Component {
 
@@ -30,7 +31,7 @@ class AccountContainer extends Component {
     this.setState({searchTerm: event.target.value})
   }
 
-  handleCheckboxChange = event => {
+  handleSortChange = event => {
     event.target.checked ? this.setState({sortBy: event.target.name}): this.setState({sortBy: ''})
   }
 
@@ -52,14 +53,7 @@ class AccountContainer extends Component {
   render() {
     return (
       <div>
-        <div>
-          <label>Sort by Description 
-            <input name="description" type="checkbox" onChange={this.handleCheckboxChange}/>
-          </label>
-          <label>Sort by Category 
-            <input name="category" type="checkbox" onChange={this.handleCheckboxChange}/>
-          </label>
-        </div>
+        <Sort handleSortChange={this.handleSortChange}/>
         <Search handleSearchChange={this.handleSearchChange} searchTerm={this.state.searchTerm}/>
         <AddTransactionForm renderNewTransaction={this.renderNewTransaction}/>
         <TransactionsList transactions={this.filterTransactions()} removeTxn={this.removeTxn}/>

@@ -5,7 +5,8 @@ import AddTransactionForm from "./AddTransactionForm";
 
 class AccountContainer extends Component {
   state = {
-    transactions: []
+    transactions: [],
+    search: ""
   }
 
   // Fetch list of current Transactions
@@ -19,7 +20,6 @@ class AccountContainer extends Component {
      });
   }
 
-
   // Create a New Transaction
   addNewTransaction = newTrans => {
     this.setState(prevState => ({
@@ -27,11 +27,18 @@ class AccountContainer extends Component {
     }))
   }
 
+  // Search for specific items based on description 
+  searchByDescription = desc => {
+    this.setState({
+      search: desc
+    })
+  }
 
+  // Render shit
   render() {
     return (
       <div>
-        <Search />
+        <Search search={this.state.search} searchByDesc={this.searchByDescription}/>
         <AddTransactionForm handleNewTransaction={this.addNewTransaction} />
         <TransactionsList transactions={this.state.transactions}/>
       </div>

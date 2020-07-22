@@ -10,7 +10,7 @@ const TransactionsList = (props) => {
 
 // },
 
-  console.log("Props Success; List-", props);
+  // console.log("Props Success; List-", props);
   const renderTransactions = () => {
     return props.transactions.map(
       transaction => <Transaction 
@@ -42,7 +42,7 @@ const TransactionsList = (props) => {
         </tr>
         {/* render Transactions here */}
         {renderTransactions()}
-        {console.log("Transactions List Success")}
+        {/* {console.log("Transactions List Success")} */}
       </tbody>
     </table>
   );

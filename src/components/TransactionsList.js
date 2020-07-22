@@ -1,7 +1,28 @@
 import React from "react";
 import Transaction from "./Transaction";
 
-const TransactionsList = () => {
+const TransactionsList = (props) => {
+//   "id": 1,
+//   "date": "2019-12-01",
+//   "description": "Paycheck from Bob's Burgers",
+//   "category": "Income",
+//   "amount": 1000
+
+// },
+
+  console.log("Props Success; List-", props);
+  const renderTransactions = () => {
+    return props.transactions.map(
+      transaction => <Transaction 
+        key={transaction.id} 
+        date={transaction.date} 
+        description={transaction.description} 
+        category={transaction.category} 
+        amount={transaction.amount} 
+      />
+    )
+  }
+
   return (
     <table className="ui celled striped padded table">
       <tbody>
@@ -20,9 +41,14 @@ const TransactionsList = () => {
           </th>
         </tr>
         {/* render Transactions here */}
+        {renderTransactions()}
+        {console.log("Transactions List Success")}
       </tbody>
     </table>
   );
 };
 
 export default TransactionsList;
+
+
+

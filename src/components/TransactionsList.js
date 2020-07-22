@@ -12,6 +12,7 @@ const TransactionsList = (props) => {
         description={txn.description}
         category={txn.category}
         amount={txn.amount}
+        removeTxn={props.removeTxn}
       />  
     )
   }
@@ -31,6 +32,9 @@ const TransactionsList = (props) => {
           </th>
           <th>
             <h3 className="ui center aligned header">Amount</h3>
+          </th>
+          <th>
+            <h3 className="ui center aligned header">Delete</h3>
           </th>
         </tr>
         {renderTransactions()}

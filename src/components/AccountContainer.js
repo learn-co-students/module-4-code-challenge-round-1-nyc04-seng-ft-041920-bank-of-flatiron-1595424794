@@ -20,6 +20,11 @@ class AccountContainer extends Component {
     this.setState({transactions: [...this.state.transactions, newTxn]})
   }
 
+  removeTxn = id => {
+    const updatedList = this.state.transactions.filter(txn => txn.id !== id)
+    this.setState({transactions: updatedList})
+  }
+
   handleSearchChange = event => {
     this.setState({searchTerm: event.target.value})
   }
@@ -37,7 +42,7 @@ class AccountContainer extends Component {
       <div>
         <Search handleSearchChange={this.handleSearchChange} searchTerm={this.state.searchTerm}/>
         <AddTransactionForm renderNewTransaction={this.renderNewTransaction}/>
-        <TransactionsList transactions={this.filterTransactions()}/>
+        <TransactionsList transactions={this.filterTransactions()} removeTxn={this.removeTxn}/>
       </div>
     );
   }

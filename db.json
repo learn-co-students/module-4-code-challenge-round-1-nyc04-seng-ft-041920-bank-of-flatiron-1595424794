@@ -83,6 +83,20 @@
       "description": "Venmo, Pay Roommate for Rent",
       "category": "Housing",
       "amount": -975
+    },
+    {
+      "id": 13,
+      "date": "2020-07-21",
+      "description": "Glossier",
+      "category": "Makeup",
+      "amount": "37.02"
+    },
+    {
+      "id": 14,
+      "date": "2020-07-07",
+      "description": "Surreal Skincare",
+      "category": "Skincare",
+      "amount": "200"
     }
   ]
 }

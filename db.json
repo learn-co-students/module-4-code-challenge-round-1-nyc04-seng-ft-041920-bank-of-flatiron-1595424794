@@ -83,6 +83,34 @@
       "description": "Venmo, Pay Roommate for Rent",
       "category": "Housing",
       "amount": -975
+    },
+    {
+      "amount": "1200",
+      "category": "friends",
+      "date": "2020-07-29",
+      "description": "buy puppy",
+      "id": 13
+    },
+    {
+      "amount": "-100",
+      "category": "eat",
+      "date": "2020-07-24",
+      "description": "buy groceries",
+      "id": 14
+    },
+    {
+      "amount": "-50",
+      "category": "friends",
+      "date": "2020-07-22",
+      "description": "buy puppy",
+      "id": 15
+    },
+    {
+      "amount": "-50",
+      "category": "friends",
+      "date": "2020-07-22",
+      "description": "buy food for puppy",
+      "id": 16
     }
   ]
 }

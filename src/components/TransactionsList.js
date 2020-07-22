@@ -1,5 +1,6 @@
 import React from "react";
 import Transaction from "./Transaction";
+import {Consumer} from './context'
 
 const TransactionsList = () => {
   return (
@@ -18,8 +19,28 @@ const TransactionsList = () => {
           <th>
             <h3 className="ui center aligned header">Amount</h3>
           </th>
+          <th>
+            <h3 className="ui center aligned header">Hide from Mom</h3>
+          </th>
         </tr>
-        {/* render Transactions here */}
+        <Consumer>
+          {({transactions, search}) => {
+            const filteredTrx = transactions.filter(trx => trx.description.toLowerCase().includes(search.toLowerCase()))
+            console.log(filteredTrx)
+            return (
+              <React.Fragment>
+                {filteredTrx.map((trx, index) =>
+                  <Transaction
+                    filteredTrx={filteredTrx}
+                    index={index}
+                    key={trx.id}
+                  />
+                )}
+              </React.Fragment>
+            )
+          }}
+
+        </Consumer>
       </tbody>
     </table>
   );

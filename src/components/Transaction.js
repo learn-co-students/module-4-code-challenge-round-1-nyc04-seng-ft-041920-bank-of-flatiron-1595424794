@@ -1,12 +1,15 @@
 import React from "react";
+import TransactionsList from "./TransactionsList"
+const Transaction = (props) => {
+  // console.log(props)
 
-const Transaction = () => {
   return (
     <tr>
-      <td>{"your code here..."}</td>
-      <td>{"your code here..."}</td>
-      <td>{"your code here..."}</td>
-      <td>{"your code here..."}</td>
+      
+      <td>{props.date}</td>
+      <td>{props.description}</td>
+      <td>{props.category}</td>
+      <td>{props.amount}</td>
     </tr>
   );
 };

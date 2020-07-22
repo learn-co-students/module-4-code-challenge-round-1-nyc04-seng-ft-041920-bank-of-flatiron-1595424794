@@ -3,10 +3,10 @@ import React from "react";
 const Transaction = () => {
   return (
     <tr>
-      <td>{"your code here..."}</td>
-      <td>{"your code here..."}</td>
-      <td>{"your code here..."}</td>
-      <td>{"your code here..."}</td>
+      <td>{this.date}</td>
+      <td>{this.description}</td>
+      <td>{this.category}</td>
+      <td>{this.amount}</td>
     </tr>
   );
 };

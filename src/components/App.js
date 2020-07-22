@@ -3,6 +3,11 @@ import AccountContainer from "./AccountContainer";
 import "../stylesheets/App.css";
 
 class App extends Component {
+
+/**passing information up - 
+ * need to use props on the transaction but where do i ?? */
+
+
   render() {
     return (
       <div className="ui raised segment">

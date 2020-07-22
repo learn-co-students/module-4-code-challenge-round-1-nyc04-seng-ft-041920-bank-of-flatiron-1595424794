@@ -4,7 +4,9 @@ import Transaction from "./Transaction";
 const TransactionsList = (props) => {
   const renderFilteredTransactions = () => {
     let filteredTransactions = props.transactions.filter((transaction) =>
-      transaction.description.includes(props.searchTerm)
+      transaction.description
+        .toLowerCase()
+        .includes(props.searchTerm.toLowerCase())
     );
     return filteredTransactions;
   };

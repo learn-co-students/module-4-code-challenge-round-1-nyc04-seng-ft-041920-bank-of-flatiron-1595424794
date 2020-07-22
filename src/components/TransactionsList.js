@@ -5,11 +5,23 @@ const TransactionsList = (props) => {
   const renderTrans = () => {
     if (props.filtered.length > 0) {
       return props.filtered.map((trans) => {
-        return <Transaction transaction={trans} key={trans.id} />;
+        return (
+          <Transaction
+            transaction={trans}
+            key={trans.id}
+            onDelete={props.onDelete}
+          />
+        );
       });
     } else {
       return props.transactions.map((trans) => {
-        return <Transaction transaction={trans} key={trans.id} />;
+        return (
+          <Transaction
+            transaction={trans}
+            key={trans.id}
+            onDelete={props.onDelete}
+          />
+        );
       });
     }
   };
@@ -28,6 +40,9 @@ const TransactionsList = (props) => {
           </th>
           <th>
             <h3 className="ui center aligned header">Amount</h3>
+          </th>
+          <th>
+            <h3 className="ui center aligned header">Delete</h3>
           </th>
         </tr>
         {renderTrans()}

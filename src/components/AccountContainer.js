@@ -4,10 +4,6 @@ import Search from "./Search";
 import AddTransactionForm from "./AddTransactionForm";
 // - DELETE: `/transactions/:id`
 
-// ## Core Deliverables
-
-// - Filter transactions by typing into the search bar. Only transactions with a description matching the search term should be shown in the transactions table.
-
 class AccountContainer extends Component {
   state = { transactions: [], filtered: [] };
 
@@ -31,6 +27,11 @@ class AccountContainer extends Component {
     );
     this.setState({ filtered: filteredList });
   };
+
+  onDelete = (id) => {
+    const newList = this.state.transactions.filter((trans) => trans.id !== id);
+    this.setState({ transactions: newList });
+  };
   render() {
     console.log(this.state.transactions);
     return (
@@ -43,6 +44,7 @@ class AccountContainer extends Component {
         <TransactionsList
           transactions={this.state.transactions}
           filtered={this.state.filtered}
+          onDelete={this.onDelete}
         />
       </div>
     );

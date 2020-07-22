@@ -3,8 +3,8 @@ import React from "react";
 const Transaction = ({id, date, description, category, amount, removeTxn}) => {
   
   const deleteTxn = () => {
-    fetch(`http://localhost:6001/transactions/${props.id}`, {method: 'DELETE'})
-      .then(removeTxn(props.id))
+    fetch(`http://localhost:6001/transactions/${id}`, {method: 'DELETE'})
+      .then(removeTxn(id))
   }
   
   return (
@@ -13,7 +13,7 @@ const Transaction = ({id, date, description, category, amount, removeTxn}) => {
       <td>{description}</td>
       <td>{category}</td>
       <td>{amount}</td>
-      <td><button onClick={deleteTxn}>Delete</button></td>
+      <td><button style={{background: 'red', color: 'white'}} onClick={deleteTxn}>X</button></td>
     </tr>
   );
 };

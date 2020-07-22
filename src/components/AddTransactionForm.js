@@ -1,6 +1,17 @@
 import React, { Component } from "react";
 
 class AddTransactionForm extends Component {
+
+
+handleSubmit = event => {
+  event.preventDefault();
+  
+  this.props.handleAddTransaction({
+    git commit 
+  })
+  
+}
+
   render() {
     return (
       <div className="ui segment">

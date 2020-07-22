@@ -1,11 +1,10 @@
 import React, { Component } from "react";
-import TransactionsList from "./TransactionsList";
 import Search from "./Search";
 import AddTransactionForm from "./AddTransactionForm";
+import TransactionsList from "./TransactionsList";
 
 class AccountContainer extends Component {
-  
-  
+
   state = {
     allTransactions: []
   }
@@ -20,16 +19,22 @@ class AccountContainer extends Component {
   }
 
 
+ 
 
   render() {
 
-    console.log(this.state)
+    //console.log(this.state.allTransactions)
+   
 
     return (
       <div>
         <Search />
+
         <AddTransactionForm />
-        <TransactionsList allTransactions = {this.state.allTransactions}/>
+
+        <TransactionsList 
+        allTransactions={this.state.allTransactions}
+        />
       </div>
     );
   }

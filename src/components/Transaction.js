@@ -2,7 +2,7 @@ import React from "react";
 
 const Transaction = (props) => {
   return (
-    <tr id={props.id}>
+    <tr key={props.key}>
       <td>{props.date}</td>
       <td>{props.description}</td>
       <td>{props.category}</td>

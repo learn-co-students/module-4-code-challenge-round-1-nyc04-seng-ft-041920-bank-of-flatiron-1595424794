@@ -5,11 +5,11 @@ const TransactionsList = (props) => {
   console.log(props.data)
   const transactionRows = props.data.map(transaction => 
     <Transaction
-       key = {props.id}
-       date = {props.date}
-       description = {props.transaction}
-       category = {props.category}
-       amount = {props.amount}
+       key = {props.data.id}
+       date = {props.data.date}
+       description = {props.data.transaction}
+       category = {props.data.category}
+       amount = {props.data.amount}
     />
   )
   return (
@@ -29,7 +29,7 @@ const TransactionsList = (props) => {
             <h3 className="ui center aligned header">Amount</h3>
           </th>
         </tr>
-        {/* render Transactions here */}
+        {transactionRows}
       </tbody>
     </table>
   );

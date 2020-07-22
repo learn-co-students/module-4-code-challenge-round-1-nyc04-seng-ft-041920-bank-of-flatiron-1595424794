@@ -28,19 +28,19 @@ class AccountContainer extends Component {
   }
 
   // Search for specific items based on description 
-  searchByDescription = desc => {
-    this.setState({
-      search: desc
-    })
+  handleSearchByDescription = search => {
+    this.setState({search})
   }
 
   // Render shit
   render() {
+    console.log(this.state.search)
+   
     return (
       <div>
-        <Search search={this.state.search} searchByDesc={this.searchByDescription}/>
+        <Search search={this.state.search} handleSearchByDesc={this.handleSearchByDescription}/>
         <AddTransactionForm handleNewTransaction={this.addNewTransaction} />
-        <TransactionsList transactions={this.state.transactions}/>
+        <TransactionsList transactions={this.state.transactions} search={this.state.search} />
       </div>
     );
   }

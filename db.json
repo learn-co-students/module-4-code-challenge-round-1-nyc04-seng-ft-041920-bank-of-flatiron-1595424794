@@ -97,6 +97,20 @@
       "category": "asdas",
       "amount": "23",
       "id": 14
+    },
+    {
+      "date": "",
+      "description": "",
+      "category": "",
+      "amount": 0,
+      "id": 15
+    },
+    {
+      "date": "2020-07-24",
+      "description": "asasd",
+      "category": "dassad",
+      "amount": "231",
+      "id": 16
     }
   ]
 }

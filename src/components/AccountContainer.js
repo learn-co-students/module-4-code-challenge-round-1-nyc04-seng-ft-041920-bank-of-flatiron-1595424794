@@ -30,6 +30,18 @@ class AccountContainer extends Component {
       })
   }
 
+  deleteTransaction=(id)=>{
+    // console.log("delete this list ", id)
+    //delete from array
+    const filteredTransactions = this.state.transactions.filter(trans => {
+      return trans.id === id ? false : true
+    })
+    // console.log("Filtered : ", filteredTransactions)
+    this.setState({
+      transactions: filteredTransactions
+    },()=>console.log("Delete Array : ",this.state))
+  }
+
   filterTransactions=()=>{
     const filteredTransactions = this.state.transactions.filter(trans => {
       return trans.description
@@ -45,7 +57,7 @@ class AccountContainer extends Component {
       <div>
         <Search searchTerm={this.state.searchTerm} handleSearch={this.handleSearch} />
         <AddTransactionForm updateSubmit={this.addTransactions}/>
-        <TransactionsList transactions={this.filterTransactions()}/>
+        <TransactionsList deleteTransaction={this.deleteTransaction} transactions={this.filterTransactions()}/>
       </div>
     );
   }

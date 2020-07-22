@@ -27,8 +27,17 @@ class AddTransactionForm extends Component {
     })
     .then(r => r.json())
     // and then send the response to the AccountContainer (has the transactions in state)
-    // fancy way to write  .then(newTransaction => this.props.addTransaction(newTransaction))
-    .then(this.props.addTransaction)
+    .then(newT => {
+      this.props.addTransaction(newT)
+
+      // clearing out the form fields after submission
+      this.setState({
+        date: "",
+        description: "",
+        category: "",
+        amount: ""
+      })
+    })
     
   }
 

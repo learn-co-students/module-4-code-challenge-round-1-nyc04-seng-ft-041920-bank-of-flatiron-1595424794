@@ -83,6 +83,13 @@
       "category": "Food",
       "amount": "15.00",
       "id": 13
+    },
+    {
+      "date": "2020-07-21",
+      "description": "Animal Crossing",
+      "category": "Gaming",
+      "amount": "60",
+      "id": 14
     }
   ]
 }

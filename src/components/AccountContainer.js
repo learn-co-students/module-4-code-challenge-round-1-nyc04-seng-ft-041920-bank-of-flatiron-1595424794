@@ -45,14 +45,15 @@ class AccountContainer extends Component {
   }
 
   filterTransactions = () => {
-    //this is case sensitive which may not be ideal, consider refactor
-    //also maybe add a sort option like 'all' that reverts back to showing all
-    const searchTerm = this.state.searchTerm
+
+    //made filter case insensitive
+    const searchTerm = this.state.searchTerm.toLowerCase()
     const sortBy = this.state.sortBy
-    const filtered = this.state.transactions.filter(t => t.description.includes(searchTerm))
+    const filtered = this.state.transactions.filter(t => t.description.toLowerCase().includes(searchTerm))
     if (sortBy !== '') {
       filtered.sort((a, b) => (a[sortBy] > b[sortBy]) ? 1 : -1)
     }
+  
     return filtered
   }
 

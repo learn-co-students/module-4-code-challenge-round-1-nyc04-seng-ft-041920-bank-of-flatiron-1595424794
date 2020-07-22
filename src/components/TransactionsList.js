@@ -3,33 +3,34 @@ import Transaction from "./Transaction";
 
 const TransactionsList = (props) => {
 
-const renderTransactions = () => { 
-      return props.transactions.map(transactions=>
-        <Transaction 
-        key={transactions.id}
-        id={transactions.id}
-        date={transactions.date}
-        description={transactions.description}
-        category={transactions.category}
-        amount={transactions.amount}
-        />
-      )
-    }
+  const filteredTransactions = () => { 
+  const findTransaction = props.transactions.filter (transactions => transactions.description.includes(props.searchTerm.toLowerCase()))
+  return findTransaction.map(transactions=>
+          <Transaction 
+          key={transactions.id}
+          id={transactions.id}
+          date={transactions.date}
+          description={transactions.description}
+          category={transactions.category}
+          amount={transactions.amount}
+          />
+        )
+      }
 
-    // const renderTransactions = (props) => {
-//     const filteredTransactions = this.props.transactions.filter 
-//     (transactions => transactions.description.includes(this.props.searchTerm))  
-//     return filteredTransactions.map(transactions=>
-//       <Transaction 
-//       key={transactions.id}
-//       id={transactions.id}
-//       date={transactions.date}
-//       description={transactions.description}
-//       category={transactions.category}
-//       amount={transactions.amount}
-//       />
-//     )
-//   }
+// const renderTransactions = () => { 
+//       return props.transactions.map(transactions=>
+//         <Transaction 
+//         key={transactions.id}
+//         id={transactions.id}
+//         date={transactions.date}
+//         description={transactions.description}
+//         category={transactions.category}
+//         amount={transactions.amount}
+//         />
+//       )
+//     }
+
+
 
   return (
     <table className="ui celled striped padded table">
@@ -48,7 +49,7 @@ const renderTransactions = () => {
             <h3 className="ui center aligned header">Amount</h3>
           </th>
         </tr>
-        {renderTransactions()}
+        {filteredTransactions()}
       </tbody>
     </table>
   );

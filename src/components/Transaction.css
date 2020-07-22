@@ -1,0 +1,15 @@
+.btn-red {
+  background-color: #cf4f4f;
+  color: rgb(255, 255, 255);
+  border-radius: 7px;
+  padding: 10px;
+  font-size: 18px;
+}
+.btn-red:hover {
+  background-color: #8d3535;
+}
+.btn-red:active {
+  background-color: #8d3535;
+  box-shadow: 0 5px #666;
+  transform: translateY(3px);
+}

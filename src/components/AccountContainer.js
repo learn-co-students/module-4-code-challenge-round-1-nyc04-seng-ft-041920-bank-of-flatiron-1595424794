@@ -21,10 +21,27 @@ class AccountContainer extends Component {
     })
   }
 
-  handleSearchTermChange = (name, value) => {
+  // ===> using higher order fn in Search component <=== (it works)
+  // set new searchTerm state 
+  // handleSearchTermChange = (name, value) => {
+  //   this.setState({
+  //     [name]: value  // I initially wanted to use higher order fn but since searchTerm is so specific in this case I thought it wasn't necessary
+  //   })
+  // }
+
+  // set new searchTerm state 
+  handleSearchTermChange = value => {
     this.setState({
-      [name]: value
+      searchTerm: value
     })
+  } 
+
+  deleteTransaction = id => {
+    const filteredTransactions = this.state.transactions.filter(item => item.id !== id)
+
+    this.setState(prevState => ({
+      transactions: filteredTransactions
+    }))
   }
 
   // add transaction to the list of transaction on UI
@@ -32,13 +49,26 @@ class AccountContainer extends Component {
     this.setState({ transactions: [newTransaction, ...this.state.transactions] })
   }
 
+  // sort transactions alphabetically by category
+  sortByCategory() {
+    return this.state.transactions.sort((a,b) => a.category.localeCompare(b.category))  
+  }
+
   render() {
-    console.log("AccountContainer ======> ", this.state.searchTerm)
     return (
       <div>
-        <Search searchTerm={this.state.searchTerm} setSearchTerm={this.handleSearchTermChange}/>
+        <Search 
+          searchTerm={this.state.searchTerm} 
+          setSearchTerm={this.handleSearchTermChange}
+          />
+
         <AddTransactionForm addTransaction={this.addTransaction}/>
-        <TransactionsList searchTerm={this.state.searchTerm} transactions={this.state.transactions}/>
+
+        <TransactionsList 
+          searchTerm={this.state.searchTerm} 
+          transactions={this.sortByCategory()}
+          deleteTransaction={this.deleteTransaction}
+          />
       </div>
     );
   }

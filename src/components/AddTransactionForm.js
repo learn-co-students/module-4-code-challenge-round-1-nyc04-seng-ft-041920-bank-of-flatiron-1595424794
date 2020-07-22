@@ -8,6 +8,10 @@ class AddTransactionForm extends Component {
     category: "",
     amount: 0
   }
+
+  firstLetterUpperCase(input) {
+    return input[0].toUpperCase() + input.slice(1); 
+  }
   
   // using higher order function to set new state values
   handleOnChange = name => event => {
@@ -22,8 +26,8 @@ class AddTransactionForm extends Component {
     // create newTransactin object
     const newTransaction = {
       date: this.state.date,
-      description: this.state.description,
-      category: this.state.category,
+      description: this.firstLetterUpperCase(this.state.description),
+      category: this.firstLetterUpperCase(this.state.category),
       amount: this.state.amount
     }
 
@@ -41,11 +45,24 @@ class AddTransactionForm extends Component {
       // pass the new transaction (newItem) returned from fetch 
       // to the callback function in AccountContainer
       this.props.addTransaction(newItem)
+      
+    })
+    // ====> IS THERE A BETTER WAY TO PERFORM THIS ? <====
+    // clearing out the input values from the form after submit
+    event.target[0].value = ""
+    event.target[1].value = ""
+    event.target[2].value = ""
+    event.target[3].value = 0
+    
+    this.setState({
+      date: event.target[0].value,
+      description: event.target[1].value,
+      category: event.target[2].value,
+      amount: event.target[3].value
     })
   }
 
   render() {
-    // console.log("AddTransactionForm ======> ", this.state)
     return (
       <div className="ui segment">
         <form className="ui form" onSubmit={(event) => this.handleSubmit(event)}>

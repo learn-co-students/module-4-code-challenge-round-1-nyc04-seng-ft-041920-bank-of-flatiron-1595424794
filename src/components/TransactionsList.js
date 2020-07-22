@@ -3,9 +3,10 @@ import Transaction from "./Transaction";
 
 const TransactionsList = (props) => {
 
+  // filter transactions and create array of components
   const renderTransactions = () => {
-    const filteredTransactions = props.transactions.filter(transaction => transaction.description.toLowerCase().includes(props.searchTerm.toLowerCase()))
-    
+    const filteredTransactions = props.transactions.filter(transaction => transaction.description.toLowerCase().includes(props.searchTerm.toLowerCase()))  
+
     return filteredTransactions.map(item => 
       <Transaction 
         key={item.id}
@@ -14,6 +15,7 @@ const TransactionsList = (props) => {
         description={item.description}
         category={item.category}
         amount={item.amount}
+        deleteTransaction={props.deleteTransaction}
       />
       )
   }
@@ -35,6 +37,7 @@ const TransactionsList = (props) => {
             <h3 className="ui center aligned header">Amount</h3>
           </th>
         </tr>
+        {/* render transactions */}
         {renderTransactions()}
       </tbody>
     </table>

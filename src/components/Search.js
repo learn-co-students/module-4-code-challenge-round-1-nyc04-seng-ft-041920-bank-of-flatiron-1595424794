@@ -2,9 +2,16 @@ import React from "react";
 
 const Search = (props) => {
 
-  // using higher order function to send name and event.target.value to the parent component
-  const handleOnChange = name => event => {
-    props.setSearchTerm(name, event.target.value)
+  // ===> practicing higher order fn <=== (it works)
+  // sending name and event.target.value to the parent component to set the new state
+  // const handleOnChange = name => event => {
+  //   props.setSearchTerm(name, event.target.value)
+  // }
+
+  // ===> in this instance this is a more practical approach than using higher order fn <===
+  // passing the event.target.value to the parent component to set the new state
+  const handleOnChange = event => {
+    props.setSearchTerm(event.target.value)
   }
 
   return (
@@ -12,7 +19,8 @@ const Search = (props) => {
       <input
         type="text"
         placeholder={"Search your Recent Transactions"}
-        onChange={handleOnChange("searchTerm")}
+        onChange={(event) => handleOnChange(event)}
+        // onChange={handleOnChange("searchTerm")} // using higher order fn <=== (it works)
         value={props.searchTerm}
       />
       <i className="circular search link icon"></i>

@@ -4,12 +4,39 @@ import Search from "./Search";
 import AddTransactionForm from "./AddTransactionForm";
 
 class AccountContainer extends Component {
+  
+  constructor(){
+    super()
+    this.state = {
+      transactions: [],
+      searchInput: ""
+    }
+    //this.handleSearch = this.handleSearch.bind(this)
+  }
+  
+
+  componentDidMount(){
+    fetch(`http://localhost:6001/transactions`)
+    .then(response => response.json())
+    .then(transactionsArr => this.setState({
+      transactions: transactionsArr
+    }))
+  }
+
+  /* handleSearch(event) {
+    this.setState({
+      searchInput: event.target.value
+    })
+  } */
+
+  
   render() {
+    console.log(this.state.transactions)
     return (
       <div>
-        <Search />
+        <Search /*{handleSearch={this.handleSearch}*//>
         <AddTransactionForm />
-        <TransactionsList />
+        <TransactionsList data={this.state.transactions} />
       </div>
     );
   }
